@@ -6,7 +6,8 @@
     },
     "jsc": {
         "parser":{
-            "syntax": "typescript"
+            "syntax": "typescript",
+            "dynamicImport": true
         }
     },
     "module": {
