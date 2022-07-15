@@ -5,6 +5,7 @@ const app = express();
 app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
+/*    debugger;   This breaks the whole thing... */
     res.json({ "hewobmollo": "wfreemp" })
 })
 
