@@ -1,30 +1,8 @@
-import { PrismaClient } from "@prisma/client";
 import express from "express";
 import morgan from 'morgan';
-import { nanoid } from 'nanoid';
+import { db } from './db-actions/database'
+import { seedDatabase } from './db-actions/actionsDatabase';
 
-const db = new PrismaClient({log: ['error', 'info', 'query', 'warn']});
-const genId = () => nanoid(16);
-
-const seedDatabase = async () => {
-    if ((await db.post.count()) === 0) {
-      await db.post.createMany({
-        data: [
-          {
-            id: genId(),
-            slug: 'ultimate-node-stack',
-            title: 'Ultimate Node Stack 2022',
-            published: new Date(),
-          },
-          {
-            id: genId(),
-            slug: 'draft-post',
-            title: 'Draft Post',
-          },
-        ],
-      });
-    }
-  };
 seedDatabase();
 
 const app = express();
