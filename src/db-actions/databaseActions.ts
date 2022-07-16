@@ -1,5 +1,8 @@
-import { db } from './database'
-import { genId } from './database';
+import { PrismaClient } from "@prisma/client";
+import { nanoid } from 'nanoid';
+
+export const db = new PrismaClient({log: ['error', 'info', 'query', 'warn']});
+export const genId = () => nanoid(16);
 
 /* Seed database */
 
@@ -23,7 +26,6 @@ export const seedDatabase = async () => {
     }
   };
 
-  /* Query all posts 
-haven't been able to make this work as an exported async function yet
+ /*  Query all posts  */
 
- export const posts = db.post.findMany(); */
+  export const findPosts = db.post.findMany()
