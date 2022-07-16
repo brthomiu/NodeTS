@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from 'morgan';
 import { findPosts, seedDatabase } from './actions/databaseActions';
+import React from 'react';
 
 seedDatabase();
 
@@ -12,6 +13,7 @@ app.get('/', async (req, res) => {
     res.json(posts); 
 });
 
+console.log(React.version);
 
 const port = Number(process.env.PORT || 8080);
 app.listen(port, '0.0.0.0', () => {
