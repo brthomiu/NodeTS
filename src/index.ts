@@ -1,6 +1,6 @@
 import express from "express";
 import morgan from 'morgan';
-import { findPosts, seedDatabase } from './db-actions/databaseActions';
+import { findPosts, seedDatabase } from './actions/databaseActions';
 
 seedDatabase();
 
