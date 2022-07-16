@@ -2,8 +2,9 @@
     "extends": "@tsconfig/node16/tsconfig.json",
     "compilerOptions": {
       "lib": [
-        "ESNext"
+        "ESNext", "DOM"
       ],
+      "types": ["react/next", "react-dom/next", "node"],
       "allowJs": true,
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,
@@ -11,7 +12,7 @@
       "jsx": "react-jsx",
     },
     "include": [
-      "src"
+      "src", "../"
     ],
     "exclude": [
       "node_modules",
